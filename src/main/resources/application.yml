@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: restApi
+  profiles:
+    active: dev
+
+
+
+  datasource:
+    password: arushi@2312
+    url: jdbc:postgresql://localhost:5432/demoappdb
+    username: postgres
+
+  jpa:
+    ddl-auto: update
+    generate-ddl: true
+    properties:
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+      hibernate:
+        format_sql: true
+      show-sql: true
+
+  flyway:
+    enabled: false
+
+security:
+  disabled: true
+
+
+server:
+  port: 8443
+  management:
+    endpoints:
+      web:
+       exposure:
+         include: health,info

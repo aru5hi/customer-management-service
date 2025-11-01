@@ -3,9 +3,6 @@ spring:
     name: restApi
   profiles:
     active: dev
-
-
-
   datasource:
     password: arushi@2312
     url: jdbc:postgresql://localhost:5432/demoappdb
@@ -31,8 +28,9 @@ security:
 
 server:
   port: 8443
-  management:
-    endpoints:
-      web:
-       exposure:
-         include: health,info
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+      path: /swagger-ui.html

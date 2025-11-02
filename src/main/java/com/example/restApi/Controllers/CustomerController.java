@@ -33,4 +33,22 @@ public class CustomerController {
     public Page<CustomerEntity> getAllCustomers(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int size, @RequestParam(defaultValue = "id") String sortBy) {
         return customerService.getAllCustomers(page, size, sortBy);
     }
+
+    @GetMapping("/{id}")
+    public CustomerEntity getCustomerById(@PathVariable String id) {
+        return customerService.getCustomerById(id);
+    }
+
+    @PutMapping("/{id}")
+    public CustomerEntity updateCustomer(@PathVariable String id, CustomerDTO updateCustomerData){
+        return customerService.updateCustomer(id, updateCustomerData);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteCustomer(@PathVariable String id) {
+        customerService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
+
+
 }

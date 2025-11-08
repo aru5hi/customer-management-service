@@ -23,6 +23,7 @@ public class CustomerManagementService {
         }
         CustomerEntity customerInsertionData = new CustomerEntity();
         customerInsertionData.setName(customerData.getName());
+        //customerInsertionData.setName(customerData.getName());
         customerInsertionData.setEmail(customerData.getEmail());
         try {
             return customerRepository.save(customerInsertionData);

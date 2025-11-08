@@ -10,13 +10,13 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/customers")
+@RequestMapping("api")
 public class CustomerController {
 
     @Autowired
     private CustomerManagementService customerService;
 
-    @PostMapping
+    @PostMapping("/customers")
     public ResponseEntity<?> createCustomer(@Validated @RequestBody CustomerDTO customerData) {
         CustomerEntity newCust = new CustomerEntity();
         try {
@@ -29,7 +29,7 @@ public class CustomerController {
         }
     }
 
-    @GetMapping
+    @GetMapping("/customers")
     public Page<CustomerEntity> getAllCustomers(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int size, @RequestParam(defaultValue = "id") String sortBy) {
         return customerService.getAllCustomers(page, size, sortBy);
     }

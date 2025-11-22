@@ -33,4 +33,10 @@ springdoc:
   api-docs:
     enabled: true
   swagger-ui:
-      path: /swagger-ui.html
+    enabled: true
+
+#JWT CONFIGURATION
+jwt:
+  secret: "b9d79d63-c0f4-4863-bb68-0cd65adf98f4"
+  expiration:
+    ms: 7200000

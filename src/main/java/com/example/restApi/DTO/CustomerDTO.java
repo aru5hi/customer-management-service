@@ -2,7 +2,11 @@ package com.example.restApi.DTO;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class CustomerDTO {
 
     @NotBlank
@@ -13,9 +17,4 @@ public class CustomerDTO {
     @Size(max = 150)
     private String email;
 
-    public String getName() { return name; }
-    public void setName (String name) {this.name = name; }
-
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
 }
